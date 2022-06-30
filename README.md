@@ -149,9 +149,7 @@ python src/build_mrdata.py \
   ```
 
 
-  ```shell
-  # 训练示例
-  ```
+  
 
 在项目根目录下会生成standalone_train文件夹，./standalone_train/log_stage*.txt即为程序log文件
 
@@ -171,9 +169,7 @@ python src/build_mrdata.py \
 在项目根目录下会生成distribute_train文件夹，./distribute_train/log0/log.txt即为程序log文件
 
 
-  ```shell
-  # 训练示例
-  ```
+  
 
 
 其中/home/name/cityscapes指数据集的位置，其后的4指rank_size, 再后的0,1,2,3制定了设备的编号，/home/name/rank_table_4pcs.json指并行训练配置文件的位置。其他数目的设备并行训练也类似。
@@ -192,9 +188,6 @@ python src/build_mrdata.py \
   ```
 
 
-  ```shell
-  # 验证示例
-  ```
 
 /home/name/cityscapes为数据集根目录，distribute_train/checkpoint为ckpt文件路径，其后的0指定device_id.。
 
@@ -224,14 +217,6 @@ iou_class tensor([0.9742, 0.8046, 0.9048, 0.4574, 0.5067, 0.6105, 0.6239, 0.7221
   ```
 
 
-  ```shell
-  # 推理示例
-  python src/infer.py \
-  --data_path /path/to/imgs \
-  --model_path /path/to/ERFNet.ckpt /
-  --output_path /output/path \
-  --device_id 3
-  ```
 
 脚本会读取/path/to/imgs下的图片，使用/path/to/ERFNet.ckpt模型进行推理，得到的可视化结果输出到/output/path下。
 
@@ -246,8 +231,6 @@ iou_class tensor([0.9742, 0.8046, 0.9048, 0.4574, 0.5067, 0.6105, 0.6239, 0.7221
   ```
 
 
-  ```shell
-  ```
 
 会在当前目录下得到ERFNet.mindir文件, 之后进入ascend310_infer文件夹,
 
